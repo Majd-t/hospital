@@ -1,1 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+:root {
+    --maincolor: #0052cc;
+    --secondcolor: #f8a803;
+    --thirdcolor: #f4ab01;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    width: 100%;
+    box-shadow: 0 .3rem .6rem rgba(0, 0, 0, .1);
+    z-index: 1000;
+    background-color: white;
+}
+
+.logo {
+    width: 50px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    color: #000;
+    font-size: 1.4rem;
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--maincolor);
+}
+
+.navbar a::after {
+    content: "";
+    background-color: var(--maincolor);
+    width: 0;
+    position: absolute;
+    height: 0.2rem;
+    left: 0;
+    margin-top: 0.5rem;
+    top: 100%;
+    transition: 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+#menu-bars {
+    color: #000;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.right-icons .btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+    background: var(--maincolor);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.right-icons .btn:hover {
+    background-color: var(--secondcolor);
+}
+
+/* About Section */
+.main-about {
+    padding: 2rem 5%;
+    width: 100%;
+    background-image: url(images/backgroung-pattern-1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-about .about-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--maincolor);
+    border-bottom: 2px solid var(--secondcolor);
+    width: 150px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.inner-main-about {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-inner-content-left img {
+    width: 100%;
+    padding: 1rem;
+}
+
+.about-inner-content .about-right-content h3, .about-right-content p {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 1rem 0;
+}
+
+/* Technology Section */
+.technology {
+    padding: 2rem 5%;
+}
+
+.main-technology {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: -50px;
+}
+
+.inner-technology {
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.inner-technology i {
+    font-size: 3rem;
+}
+
+.inner-technology h2 {
+    font-size: 2rem;
+}
+
+.inner-technology p {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+/* Form Section */
+.container {
+    max-width: 100%;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: url(images/blurbg.jpg);
+    background-size: cover;
+    background-position: center;
+    font-size: 1.4rem;
+}
+
+.form .input-box, .form .column, .form .gender-box {
+    width: 100%;
+}
+
+.input-box label, .gender-box h3 {
+    font-size: 1.4rem;
+}
+
+.input-box input, .select-box select {
+    height: 40px;
+    font-size: 1.4rem;
+}
+
+.form button {
+    height: 40px;
+    font-size: 1.4rem;
+}
+
+.doktor {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.doktor img {
+    width: 100%;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    padding: 40px 5%;
+    background: linear-gradient(to right, #000000, #0052cc);
+    color: #fff;
+    border-top-left-radius: 50px;
+    font-size: 1.2rem;
+}
+
+.row {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.col {
+    flex: 1 1 100%;
+}
+
+.logoo {
+    width: 150px;
+}
+
+form2 {
+    margin-bottom: 20px;
+}
+
+.social .fa-brands {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 1rem 3%;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    #menu-bars {
+        display: block;
+    }
+
+    .main-home, .main-about, .technology, .main-review {
+        padding: 1rem 3%;
+    }
+
+    .inner-main-about, .main-technology, .main-services, .review-inner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-inner-content-left img, .home .home-right-content img {
+        width: 100%;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .form .column {
+        flex-direction: column;
+    }
+
+    .doktor {
+        display: none; /* إخفاء الصورة على الهواتف لتوفير المساحة */
+    }
+
+    footer .row {
+        gap: 15px;
+    }
+
+    .col h3 {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .navbar a, .right-icons .btn {
+        font-size: 1.2rem;
+    }
+
+    .main-about .about-heading, .review-heading h1, .service-heading h2 {
+        font-size: 2rem;
+    }
+
+    .inner-technology, .review-box, .inner-services {
+        padding: 1.5rem;
+    }
+
+    .form button, .input-box input {
+        font-size: 1.2rem;
+    }
+}
