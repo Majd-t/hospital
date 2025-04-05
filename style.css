@@ -4,9 +4,8 @@
     --maincolor:#0052cc;
     --secondcolor:#f8a803;
     --thirdcolor:#f4ab01;
-    
-    
 }
+
 *{
     margin:0; 
     padding:0;
@@ -17,7 +16,6 @@
     text-transform: capitalize;
     transition:all .2s linear;
     font-family: "Inter", sans-serif;
-    
 }
 
 html{
@@ -35,12 +33,11 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 7%;
+    padding: 1.5rem 10%;
     width: 100%;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     z-index: 1000;
     background-color: white !important;
-
 }
 
 /* en son eklde'm*/
@@ -56,13 +53,19 @@ header{
 .logo img{
     width: 120%;
 }
+
 .navbar a{
     color: var(--textcolor);
     font-size: 1.7rem;
     margin: 1rem;
     position: relative;
     transition: 0.5s;
+    padding-left: 20px;
+
 }
+
+
+
 .navbar a:hover{
     color: var(--maincolor);
 }
@@ -603,7 +606,7 @@ header{
     line-height: 2.5rem;
 }
 
- /*Footer*/
+/*Footer (لم يتم التعديل عليه كما طلبت) */
 footer{
     width: 100%;
     /*position: absolute; */
@@ -614,7 +617,6 @@ footer{
     border-top-left-radius: 125px; /*من اجل الميل*/
     font-size: 13px;
     line-height: 20px; 
-
 }
 
 .row {
@@ -929,15 +931,185 @@ hr{
 
 
 /* Responsive */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 50%; /* تقليل حجم الخط العام للهواتف */
+    }
+
+    header {
+        padding: 1rem 3%; /* تقليل الحواف */
+        flex-direction: row; /* جعل العناصر في صف واحد لكن مع تعديل المواضع */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menu-bars {
+        display: block; /* إظهار زر القائمة */
+        position: absolute; /* وضع الزر في الزاوية العلوية اليمنى */
+        top: 1.8rem;
+        right: 2rem;
+        color: #0052cc;
+    }
+
+    .logo {
+        order: 1;
+        width: 40px; /* جعل اللوجو أولاً */
+    }
+
+    .form-btn {
+        order: 2; /* جعل زر الفورم في المنتصف */
+        margin: 0 1rem;
+    }
+
+    .form-btn .btn {
+        padding: 0.8rem 1.2rem; /* تقليل حجم زر الفورم */
+        font-size: 1.3rem;
+        background: var(--maincolor);
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+    }
+
+    .form-btn .btn:hover {
+        background-color: var(--secondcolor);
+    }
+
+    .right-icons {
+        order: 3; /* جعل الأزرار آخرًا */
+        margin-top: 0;
+        width: auto;
+    }
+
+    .right-icons .btn {
+        padding: 0.8rem 1.2rem; /* تقليل حجم الأزرار */
+        font-size: 15px;
+        width: auto;
+        margin-right: 150px;
+    }
+
+    .navbar {
+        display: none; /* إخفاء القائمة افتراضيًا في وضع الهاتف */
+        flex-direction: column; /* جعل القائمة عمودية */
+        width: 100%; /* تقليل عرض النافبار */
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        right: 0; /* جعل النافبار تظهر من اليمين */
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,.1);
+        padding: 0.5rem 0; /* تقليل التباعد الداخلي */
+    }
+
+    .navbar a {
+        display: block; /* جعل كل رابط في سطر جديد */
+        padding: 0.8rem; /* تقليل التباعد الداخلي للروابط */
+        margin: 0;
+        font-size: 1.4rem; /* تقليل حجم النصوص */
+        text-align: center;
+    }
+
+    .main-home {
+        padding: 1rem 3%;
+    }
+
+    .home {
+        flex-direction: column; /* جعل المحتوى في عمود */
+        text-align: center;
+    }
+
+    .home-left-content, .home-right-content {
+        flex: 1 1 100%; /* جعل كل قسم يأخذ العرض الكامل */
+    }
+
+    .home-right-content img {
+        width: 80%; /* تقليل حجم الصورة */
+        margin: 2rem auto; /* توسيط الصورة */
+        display: block;
+    }
+
+    .main-technology {
+        flex-direction: column; /* جعل العناصر في عمود */
+        gap: 2rem;
+        padding: 1rem 3%;
+    }
+
+    .inner-technology {
+        padding: 2rem;
+        width: 100%; /* جعل العرض كامل */
+        border-radius: 20px; /* قيمة ثابتة (مثال: 10 بكسل) */
+    }
+
+    .main-about, .main-doctors, .main-services, .main-review {
+        padding: 1rem 3%;
+    }
+
+    .inner-main-about {
+        flex-direction: column;
+    }
+
+    .about-inner-content-left, .about-inner-content {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .about-inner-content-left img {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .main-inner-doctor {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .doc-poster {
+        width: 100%;
+    }
+
+    .main-services {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .inner-services {
+        width: 100%;
+    }
+
+    .review-inner-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .review-box {
+        width: 100%;
+    }
+
+    .container {
+        width: 85%;
+        margin: 20px;
+        padding: 20px;
+    }
+
     .form .column {
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 15px;
     }
-    .form :where(.gender-option, .gender) {
-        row-gap: 10px; /* تقليل المسافة بين العناصر */
+
+    .doktor {
+        position: relative;
+        top: 0;
+        right: 0;
+        transform: none;
+        width: 80%;
+        margin: 20px auto;
+        display: block;
     }
-}
-@media (max-width: 900px){
+
+    .form button {
+        font-size: 1.2rem;
+    }
+
     footer{
         bottom: unset;
     }
@@ -947,22 +1119,10 @@ hr{
     .col:nth-child(2), .col:nth-child(3){
         flex-basis: 100%;
     }
-    .doktor{
-        /*  max-width: 400px; 
-          margin-left: 500px; /* مسافة بين الصورة والفورم 
-          margin-top: 5000px auto;
-          margin-bottom: 500px auto; */
-          position:relative; /* وضع الصورة بشكل مستقل عن العناصر الأخرى */
-          top: 10%; /* تحديد الموقع العمودي بالنسبة للصفحة */
-          right: 0%; /* تحديد الموقع الأفقي بالنسبة للصفحة */
-          transform: translateY(3%); /* لتوسيط الصورة عموديًا بالنسبة للنقطة */
-          width: 450px; /* عرض الصورة */
-          height: auto; /* الحفاظ على نسبة العرض والطول */
 
-          
         
       }
-      .container {
+    .container {
         max-width: 900px;
         width: 90%;
         background: #fff;
@@ -975,14 +1135,41 @@ hr{
         margin: 25px; /* لإضافة هامش حول الفورم */
         font-size: 1.5rem;
         
+        } 
+
+
+@media screen and (max-width: 500px) {
+    .form .column {
+        flex-wrap: wrap;
+    }
+
+    .form :where(.gender-option, .gender) {
+        row-gap: 5px;
+        flex-direction: column;
+    }
+
+    .home-btn {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .home-btn a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .aboutbtn {
+        width: 100%;
+    }
+
+    .service-icon {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+    }
+
+    .service-icon i {
+        font-size: 2.5rem;
     }
 }
 
-
-
-
-    
-
-    
-
-    
