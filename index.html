@@ -10,43 +10,34 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/5844409191.js"></script> 
-
 </head>
 <body> 
 qq<br> <br> <br><br> <br><be><br>
-    <header>
+    <header id="home"> <!-- إضافة ID للصفحة الرئيسية -->
         
         <div class="logo"><img src="images/Yeni111.png" alt=""></div>
 
         <nav class="navbar">
-            <a href="#Home">Accueil</a>
-            <a href="#Home">À propos</a>
-            <a href="#Home">Service</a>
-            <a href="#Home">Contact</a>
+            <a href="#home">Accueil</a> <!-- رابط إلى الصفحة الرئيسية -->
+            <a href="#services">Service</a> <!-- رابط إلى الخدمات -->
+            <a href="#form">Forme</a> <!-- رابط إلى الفورم -->
+            <a href="#footer">Contact</a> <!-- رابط إلى الفوتر -->
         </nav>
 
         <div class="right-icons">
             <div id="menu-bars" class="fas fa-bars"></div>
-            <div class="btn">Forme</div>
+            <a href="#form" ><div class="btn">Forme</div></a> 
         </div>
 
     </header>
 
-    <!-- header section ended -->
-
-    <!-- Home section started -->
-
-      
-
-      
-
-    <!-- home section ends -->
+    <!-- Home section ended -->
 
     <!-- About us section started -->
 
         <div class="main-about">
 
-             <div class="about-heading">ASM Service</div> 
+             <div class="about-heading">ASM Servic</div> 
 
             <div class="inner-main-about">
                 <div class="about-inner-content-left">
@@ -58,7 +49,7 @@ qq<br> <br> <br><br> <br><be><br>
                         <h3>QUI SOMMES NOUS ? <br> Aide santé Maison est un service en Algérie d’Hospitalisation à domicile
                             Nos équipes sont à votre disposition 24H/24 et 7J/7 pour intervenir chez vous pour des avis médicales actes infirmiers et hospitalisation à domicile.
                         </h3>
-                        <p>Dans quels cas faire appel à ASM :</p>
+                        <p>Dans quels cas faire appel à SANTÉDOM :</p>
                         <p class="aboutsec-content">
                             Vous avez dans votre entourage une personne très malade et alitée qui nécessite des soins à domicile.
                            <br>Vous éprouvez des difficultés à vous déplacer à l'hôpital ou chez un médecin (état de santé , indisponibilité de transport…).
@@ -78,7 +69,7 @@ qq<br> <br> <br><br> <br><be><br>
 
     <!--   -->
     <br><be><br><br><be><br>
-        <div class="technology">
+        <div class="technology" id="services"> <!-- إضافة ID للخدمات -->
             <div class="main-technology">
                 
                 <div class="inner-technology">
@@ -110,7 +101,7 @@ qq<br> <br> <br><br> <br><be><br>
   </div>
   
 
-    <section class="container">
+    <section class="container" id="form"> <!-- إضافة ID للفورم -->
     
         <div class="regg"><p>Formulaire d'inscription</p>
         </div>
@@ -161,7 +152,7 @@ qq<br> <br> <br><br> <br><be><br>
             <input type="text" placeholder="Entrer médicaments actuels" required />
           </div>
           <BR>
-       <!--   <H2>3. Type de soins requis:</H2> -->
+          <H2>3. Type de soins requis:</H2>
             
 
           <div class="gender-box">
@@ -176,16 +167,6 @@ qq<br> <br> <br><br> <br><be><br>
                 <input type="radio" id="check-female" name="gender" />
                 <label for="check-female">Féminin</label>
               </div>
-              <!-- <div class="gender">
-                <input type="radio" id="check-other" name="gender" />
-                <label for="check-other">prefer not to say</label>
-              </div>
-              <div class="gender">
-                <input type="radio" id="check-other" name="gender" />
-                <label >prefer</label>
-                <input type="text" placeholder="Enter street address" required />
-
-              </div> -->
             </div>
           </div>
           <div class="gender-box">
@@ -203,11 +184,10 @@ qq<br> <br> <br><br> <br><be><br>
 
     <!-- footer -->
 
-    <footer>
+    <footer id="footer"> <!-- إضافة ID للفوتر -->
       <div class="row">
         <div class="col">
           <img src="images/bosss.png" class="logoo">
-          <!-- <p>mdawlmd adkaw;od dkawd;ad a;dkaswapdk dlawpdl adplad, apwdla[pd </p> -->
         </div>
         <div class="col">
           <h3>Contact <div class="underline"><span></span></div></h3>
@@ -251,4 +231,24 @@ qq<br> <br> <br><br> <br><be><br>
     
 
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuBars = document.getElementById('menu-bars');
+    const navbar = document.querySelector('.navbar');
+
+    menuBars.addEventListener('click', function() {
+        navbar.style.display = navbar.style.display === 'none' || navbar.style.display === '' ? 'block' : 'none';
+    });
+
+    // إضافة تمرير سلس للروابط
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+</script>
 </html>
